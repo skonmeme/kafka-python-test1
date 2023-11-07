@@ -13,7 +13,7 @@ def delivery_report(err, msg):
     if err is not None:
         logging.error('Message delivery failed: {}'.format(err))
     else:
-        logging.devel('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
+        logging.debug('Message delivered to {} [{}]'.format(msg.topic(), msg.partition()))
 
 def produce(bootstrap_servers: str, topic: str, interval: float):
     p = Producer({'bootstrap.servers': bootstrap_servers})
